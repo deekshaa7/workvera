@@ -62,10 +62,11 @@ const PostDetailPage = () => {
     }
   };
 
- useEffect(() => {
-  fetchJobs(); // or fetchPostAndComments()
-}, [fetchJobs]); // or [fetchPostAndComments]
-
+  useEffect(() => {
+    if (postId) {
+        fetchPostAndComments();
+    }
+  }, [postId]);
 
   const handleCommentSubmit = async (e) => {
     e.preventDefault();
