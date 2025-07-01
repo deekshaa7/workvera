@@ -62,11 +62,12 @@ const PostDetailPage = () => {
     }
   };
 
-  useEffect(() => {
-    if (postId) {
-        fetchPostAndComments();
-    }
-  }, [postId]);
+ useEffect(() => {
+  if (postId) {
+    fetchPostAndComments();
+  }
+}, [postId, fetchPostAndComments]);
+
 
   const handleCommentSubmit = async (e) => {
     e.preventDefault();
