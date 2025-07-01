@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Ensure your backend API URL is correctly set here or in an environment variable
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://127.0.0.1:8000/api'; 
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://deekshaasharma7.pythonanywhere.com/api'; 
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
