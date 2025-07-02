@@ -26,7 +26,7 @@ const CommentCard = ({ comment }) => {
 
 const PostDetailPage = () => {
   const { postId } = useParams();
-  // const [post, setPost] = useState(null);
+  const [post, setPost] = useState(null);
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
   const [isLoading, setIsLoading] = useState(true);
@@ -62,11 +62,11 @@ const PostDetailPage = () => {
   //   }
   // };
 
-  // useEffect(() => {
-  //   if (postId) {
-  //       // fetchPostAndComments();
-  //   }
-  // }, [postId]);
+  useEffect(() => {
+    if (postId) {
+        // fetchPostAndComments();
+    }
+  }, [postId]);
 
   const handleCommentSubmit = async (e) => {
     e.preventDefault();
