@@ -36,37 +36,37 @@ const PostDetailPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const fetchPostAndComments = async () => {
-    setIsLoading(true);
-    setError('');
-    try {
-      // Fetch post details:
-      const postResponse = await apiClient.get(`/community/posts/${postId}/`);
-      setPost(postResponse.data);
+  // const fetchPostAndComments = async () => {
+  //   setIsLoading(true);
+  //   setError('');
+  //   try {
+  //     // Fetch post details:
+  //     const postResponse = await apiClient.get(`/community/posts/${postId}/`);
+  //     setPost(postResponse.data);
       
-      // Fetch comments for the post using the custom action:
-      const commentsResponse = await apiClient.get(`/community/posts/${postId}/comments/`);
-      setComments(commentsResponse.data.results || commentsResponse.data || []); 
+  //     // Fetch comments for the post using the custom action:
+  //     const commentsResponse = await apiClient.get(`/community/posts/${postId}/comments/`);
+  //     setComments(commentsResponse.data.results || commentsResponse.data || []); 
 
-    } catch (err) {
-      console.error("Failed to fetch post details or comments:", err);
-      if (err.response && err.response.status === 404) {
-        setError('Post not found.');
-      } else {
-        setError('Failed to load the post and its comments. Please try again later.');
-      }
-      setPost(null);
-      setComments([]);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  //   } catch (err) {
+  //     console.error("Failed to fetch post details or comments:", err);
+  //     if (err.response && err.response.status === 404) {
+  //       setError('Post not found.');
+  //     } else {
+  //       setError('Failed to load the post and its comments. Please try again later.');
+  //     }
+  //     setPost(null);
+  //     setComments([]);
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // };
 
-  useEffect(() => {
-    if (postId) {
-        fetchPostAndComments();
-    }
-  }, [postId]);
+  // useEffect(() => {
+  //   if (postId) {
+  //       // fetchPostAndComments();
+  //   }
+  // }, [postId]);
 
   const handleCommentSubmit = async (e) => {
     e.preventDefault();
